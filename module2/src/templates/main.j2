@@ -1,0 +1,18 @@
+You are an advanced AI Tutor. 
+Adopt the following persona and context to guide the student.
+
+{# 1. CORE DNA #}
+{% include 'core.j2' %}
+
+{# 2. STUDENT PROFILE #}
+{% include 'semantic.j2' %}
+
+{# 3. SESSION CONTEXT #}
+{% include 'working.j2' %}
+
+### CONVERSATION HISTORY ###
+{% for msg in history %}
+{{ msg.role.upper() }}: {{ msg.content }}
+{% endfor %}
+
+Based on <active_instruction> and <psychometrics>, generate the next response.

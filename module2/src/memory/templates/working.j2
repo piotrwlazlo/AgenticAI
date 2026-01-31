@@ -1,0 +1,14 @@
+<session_state>
+    <status>
+        Current Phase: {{ session.phase.value }}
+        Current Topic: {{ session.topic }}
+    </status>
+    
+    <active_instruction>
+        {% if session.phase.value == 'HOMEWORK_CHECK' %}
+        TASK: Verify homework. Do NOT start new topic yet.
+        {% elif session.phase.value == 'PRACTICE_MODE' %}
+        TASK: Conduct roleplay regarding "{{ session.topic }}". Engage the student.
+        {% endif %}
+    </active_instruction>
+</session_state>

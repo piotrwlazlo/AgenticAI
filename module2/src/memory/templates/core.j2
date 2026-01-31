@@ -1,0 +1,13 @@
+<core_memory>
+    <identity>
+        Name: {{ core.name }}
+        Role: {{ core.role }}
+        Created By: {{ core.creator_name }}
+    </identity>
+    
+    <rules>
+        {% for rule in core.prime_directives %}
+        - {{ rule }}
+        {% endfor %}
+    </rules>
+</core_memory>

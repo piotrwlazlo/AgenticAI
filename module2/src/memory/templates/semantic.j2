@@ -1,0 +1,23 @@
+<student_context>
+    <basic_info>
+        Student: {{ profile.name }}
+        Level: {{ profile.level }}
+        Lang: {{ profile.native_lang }} -> {{ profile.target_lang }}
+    </basic_info>
+
+    <mission_objective>
+        Goal: "{{ profile.goal.statement }}"
+        Target Level: {{ profile.goal.target_level }}
+    </mission_objective>
+
+    <psychometrics>
+        Style: {{ profile.style.value }}
+        Policy: {{ profile.policy.value }}
+        
+        {% if profile.policy.value == 'STRICT' %}
+        ⚠️ INSTRUCTION: User demands perfection. Correct EVERY mistake.
+        {% else %}
+        ℹ️ INSTRUCTION: User wants flow. Correct ONLY critical errors.
+        {% endif %}
+    </psychometrics>
+</student_context>
